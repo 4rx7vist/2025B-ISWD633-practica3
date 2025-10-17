@@ -19,19 +19,27 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 # COMPLETAR CON EL COMANDO
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Al ingresar al contenedor de la imagen, aparece como 403 forbidden, dado que no esta presente un archivo para mostrar en la carpeta host
+<img width="1835" height="846" alt="image" src="https://github.com/user-attachments/assets/b972b122-89b0-462b-a574-68e1c100937e" />
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Dado que el contenedor apunta al host con la carpeta share para mostrar el archivo index.html, no existe un archivo index.html contenido den el contenedor, revisando la ruta que apunta en el contenerdor se visualiza que no existe un archivo presente.
+<img width="1130" height="423" alt="image" src="https://github.com/user-attachments/assets/24989f88-1031-4bc3-ae8b-3349c92b8bbe" />
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Una ves extraida y que lea el archivo raiz desde el host, ya se visualiza efectivamente el contenido en el contenedor. 
+<img width="1832" height="963" alt="image" src="https://github.com/user-attachments/assets/f37462c3-54a4-4639-8909-ba9699ad2034" />
+
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+
+```
+docker rm nginx_redirect_host
+```
 
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Al crear nuevamente un contenedor montado al mismo directorio, se genera un contenedor nuevo e independiente, pero el contenido de la carpeta del host persiste. El contenedor seguirá mostrando el mismo resultado anterior: si el directorio host contiene archivos index.html, Nginx los servirá; si está vacío, se mostrará un error 403 Forbidden.
 
+<img width="1824" height="964" alt="image" src="https://github.com/user-attachments/assets/c7d5aad2-8001-4245-8566-2bb8fb9248fc" />
 
